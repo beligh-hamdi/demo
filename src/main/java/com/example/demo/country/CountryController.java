@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.country;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Spliterator;
 import java.util.Spliterators;
-import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @RestController
@@ -24,6 +23,6 @@ public class CountryController {
     public List<Country> getTreeById() {
         return StreamSupport.stream(
                 Spliterators.spliteratorUnknownSize(repository.findAll().iterator(), Spliterator.ORDERED), false)
-                .collect(Collectors.toList());
+                .toList();
     }
 }
