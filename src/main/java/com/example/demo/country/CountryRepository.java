@@ -1,6 +1,6 @@
 package com.example.demo.country;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface CountryRepository extends CrudRepository<Country, Integer> {
+public interface CountryRepository extends MongoRepository<Country, String> {
 }
